@@ -1,1 +1,88 @@
 
+import java.awt.*;
+import java.applet.*;
+public class IDGenerator extends Applet 
+{
+String name;
+ String branch;
+ String blood_grp;
+ int year;
+ String address;
+ long phone_no;
+ Image img;
+ Image img1;
+ 
+ Font f1,f2,f3,f4,f5,f6,f7,f8;
+ public void init()
+{
+ name=getParameter("Name");
+ branch=getParameter("Branch");
+ blood_grp=getParameter("Blood_grp");
+ year=Integer.parseInt(getParameter("Year"));
+ address=getParameter("Address");
+ phone_no=Long.parseLong(getParameter("Phone_no"));
+ img=getImage(getDocumentBase(),"gpy.jpg");
+ img1=getImage(getDocumentBase(),"id.jpg");
+ 
+ f1=new Font(" ",Font.BOLD,40);
+ f2=new Font(" ",Font.BOLD,24);
+ f3=new Font(" ",Font.PLAIN,20);
+ f4=new Font(" ",Font.BOLD,22);
+ f5=new Font("Algerian",Font.BOLD,30);
+ f6=new Font(" ",Font.BOLD,24);
+ f7=new Font(" ",Font.PLAIN,24);
+ f8=new Font(" ",Font.PLAIN,18);
+}
+public void paint(Graphics g)
+{
+ setBackground(Color.white);
+ g.drawRect(30,100,900,450);
+ g.setFont(f1);
+ g.setColor(Color.green);
+ g.drawString("GOVT.POLYTECHNIC YAVATMAL",150,150);
+ g.setFont(f2);
+ g.setColor(Color.red);
+ g.drawString("DHAMANGAON ROAD,YAVATMAL-445001",190,170);
+ g.setFont(f3);
+ g.setColor(Color.green);
+ g.drawString("E-mailOffice.grwpyavatmal@dtemaharashtra.gov.in",140,200);
+ g.drawString("Web-site-www.gpyavatmal.ac.in",630,200);
+ g.setColor(Color.blue);
+ g.fillRect(30,230,900,30);
+ g.setColor(Color.white);
+ g.setFont(f4);
+ g.drawString("TEL-07232246356",150,250);
+ g.drawString("IDENTITY CARD",400,250);
+ g.drawString("FAX-07232246356",600,250);
+ g.drawImage(img,50,120,this);
+ g.drawImage(img1,70,300,this);
+ g.setColor(Color.red);
+ g.setFont(f5);
+ g.drawString("Name: "+name,330,300);
+ g.setColor(Color.black);
+ g.setFont(f6);
+ g.drawString("Branch:"+branch,400,330);
+ g.setColor(Color.blue);
+ g.setFont(f7);
+ g.drawString("Blood Group:"+blood_grp,400,370);
+ g.drawString(" Academic Year:"+year,400,410);
+ g.drawString("Address:"+address,400,440);
+ g.drawString("Phone.no:"+phone_no,400,470);
+ 
+ 
+ }
+}
+/*<applet code="IDGenerator" width=700 height=500>
+<param name="Name" value="Ramesh Vijay Sharma">
+</param>
+<param name="Branch" value ="COMPUTER ENGINEERING">
+</param>
+<param name="Blood_grp" value ="AB-ve">
+</param>
+<param name="Year" value ="2022">
+</param>
+<param name="Address" value ="Darda nagar,yavatmal">
+</param>
+<param name="Phone_no" value ="6223678676">
+</param>
+</applet>*/
